@@ -2,6 +2,7 @@ package application;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Java {
@@ -18,5 +19,11 @@ public class Java {
 		
 		int prod = list.stream().reduce(1, (x, y) -> x * y);
 		System.out.println("Prod = " + prod);
+		
+		List<Integer> newList = list.stream()
+				.filter(x -> x %2 == 0)
+				.map(x -> x * 10)
+				.collect(Collectors.toList());
+		System.out.println(Arrays.toString(newList.toArray()));
 	}
 }
