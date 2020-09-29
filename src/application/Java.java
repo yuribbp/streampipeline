@@ -12,5 +12,11 @@ public class Java {
 		
 		Stream<Integer> st1 = list.stream().map(x -> x * 10);
 		System.out.println(Arrays.toString(st1.toArray()));
+		
+		int sum = list.stream().reduce(0, (x, y) -> x + y);
+		System.out.println("Sum = " + sum);
+		
+		int prod = list.stream().reduce(1, (x, y) -> x * y);
+		System.out.println("Prod = " + prod);
 	}
 }
